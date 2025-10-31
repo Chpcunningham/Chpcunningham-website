@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Chronicles - Connor Cunningham</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Iceland&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.min.css"
+    />
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid #313131;
+        margin: 20px 20px;
+      }
+      .content_wrapper {
+        max-width: 1210px;
+        margin: 0 auto;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+      }
+      .content_wrapper .header {
+        display: flex;
+        position: sticky;
+        z-index: 1000;
+        top: 0;
+        width: 100%;
+        max-width: 1245px;
+        background-color: #121212;
+        flex-direction: row;
+        align-items: center; /* vertically center header content */
+        justify-content: flex-start;
+        text-align: left;
+        margin: 0 -16px 16px; /* removed negative top margin which pushed the header off-screen */
+        gap: 16px;
+        padding: 8px 16px;
+      }
+      .content_wrapper .header .sociallinks {
+        display: flex;
+        gap: 12px;
+        height: auto;
+        align-items: center;
+        padding-top: 0; /* remove extra top padding so centering works */
+        margin-left: auto; /* push to the far right of the header */
+      }
+      .game-title {
+        color: #f5e8d8;
+        text-align: left;
+        align-items: left;
+        font-family: "Iceland", sans-serif;
+        font-size: 50px;
+        font-weight: normal;
+        line-height: 1.1;
+      }
+      .game-subtitle {
+        color: #f5e8d8;
+        font-family: "Iceland", sans-serif;
+        font-size: 24px;
+        font-weight: normal;
+        margin-top: 6px;
+      }
+      .game-link {
+        color: #f5e8d8;
+        text-decoration: none;
+        padding: 6px 10px;
+      }
+      .game-link:hover {
+        color: rgba(226, 48, 48, 0.479);
+      }
+    </style>
+</head>
+<body>
+    <div class="content_wrapper">
+        <div class="header">
+            <div class="game-title">
+                Zoo Chronicles
+          <br />
+          <div class="game-subtitle">Zoo management database</div>
+            </div>
+            <div class="sociallinks">
+                <a class="game-link" href="https://github.com/Chpcunningham/ProjectReset" id="github"
+            ><i class="fab fa-github" style="font-size: 32px"></i
+          ></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
