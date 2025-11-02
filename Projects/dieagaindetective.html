@@ -20,166 +20,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.min.css"
     />
-    <style>
-        * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #121212;
-      }
-      hr {
-        border: none;
-        border-top: 1px solid #313131;
-        margin: 20px 20px;
-      }
-      .content_wrapper {
-        max-width: 1210px;
-        margin: 0 auto;
-        margin-top: 0px;
-        margin-right: auto;
-        margin-bottom: 0px;
-        margin-left: auto;
-      }
-      .content_wrapper .header {
-        display: flex;
-        position: sticky;
-        z-index: 1000;
-        top: 0;
-        width: 1400px;
-        max-width: 1246px;
-        background-color: #121212;
-        flex-direction: row;
-        align-items: center; /* vertically center header content */
-        justify-content: flex-start;
-        text-align: left;
-        margin: 0 -16px 16px; /* removed negative top margin which pushed the header off-screen */
-        gap: 16px;
-        padding: 8px 16px;
-      }
-      .content_wrapper .header .sociallinks {
-        display: flex;
-        gap: 12px;
-        height: auto;
-        align-items: center;
-        padding-top: 0; /* remove extra top padding so centering works */
-        margin-left: auto; /* push to the far right of the header */
-      }
-      .game-title {
-        color: #f5e8d8;
-        text-align: left;
-        align-items: left;
-        font-family: "Iceland", sans-serif;
-        font-size: 50px;
-        font-weight: normal;
-        line-height: 1.1;
-      }
-      .game-subtitle {
-        color: #f5e8d8;
-        font-family: "Iceland", sans-serif;
-        font-size: 24px;
-        font-weight: normal;
-        margin-top: 6px;
-      }
-      .game-link {
-        color: #f5e8d8;
-        text-decoration: none;
-        padding: 6px 10px;
-      }
-      .game-link:hover {
-        color: rgba(226, 48, 48, 0.479);
-      }
-      .profile-img {
-        margin: 24px 0;
-        display: flex;
-        text-align: left;
-      }
-      .profile-img img{
-        width: 600px;
-        border-radius: 25%;
-      }
-      .profile-img .desc{
-        color: #f5e8d8;
-        font-family: "Iceland", sans-serif;
-      }
-      .profile-img .desc p{
-        text-align: center;
-        font-size: 25px;
-      }
-      .project-info{
-        text-align: left;
-        background-color: #5c0d0d;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
-        padding: 20px;
-        mask-image: 
-          linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%),
-          linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
-        mask-composite: intersect;
-        -webkit-mask-image: 
-          linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%),
-          linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
-        -webkit-mask-composite: source-in;
-      }
-      .project-info h1{
-        font-size: 30px;
-        padding-left: 10px;
-        color: #f5e8d8;
-        font-family: "Iceland", sans-serif;
-      }
-      .project-info ul{
-        list-style: none;
-        padding-left: 40px;
-        padding-right: 40px;
-        color: #f5e8d8;
-        font-size: 25px;
-      }
-      .project-info .teamflex{
-        padding-top: 15px;
-        display: flex;
-        gap: 100px;
-        text-align: center;
-        justify-content: center;
-      }
-      .project-info .teamflex a{
-        border: 1px solid #f5e8d8;
-        border-radius: 5px;
-        padding: 5px;
-        text-decoration: none;
-        color: #f5e8d8;
-        display: inline-block; /* allow transform to apply */
-        transition: border-color 0.5s ease, border-width 0.25s ease, color 0.2s ease, transform 0.2s ease;
-      }
-      .project-info .teamflex a:hover{
-        border-width: 2px;
-        border-color: aliceblue;
-        color: aliceblue;
-        font-weight: bold;
-        transform: scale(1.04);
-      }
-      /* Styles for project-details (was missing) */
-      .project-details{
-        margin: 24px 0;
-        display: flex;
-        gap: 24px;
-        align-items: center;
-        color: #f5e8d8;
-      }
-      .project-details img{
-        width: 550px;
-        border-radius: 20px;
-      }
-      .project-details h1{
-        font-family: "Iceland", sans-serif;
-        color: #f5e8d8;
-        font-size: 32px;
-      }
-      .project-details .desc p{
-        text-align: left;
-        font-size: 25px;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="../css/project.css" 
+      />
 </head>
 <body>
     <div class="content_wrapper">
@@ -232,26 +76,50 @@
           </div>
           <hr>
           <div class="project-details">
-            <img src="../Images/DieAgain/DAD_Safehouse.png">
+            <div class="project-images">
+              <img src="../Images/DieAgain/DAD_Safehouse.png" alt="Safehouse view">
+              <img src="../Images/DieAgain/DAD_Bar.png" alt="Additional view">
+            </div>
             <div class="desc">
               <h1 style="font-size: 35px;">Programming</h1>
               <hr>
-              <p> You're Detective John Doe, and you've stumbled upon an ancient evil — Occult families performing a ritual known as "The Chalk Circle." Sacrifices to a nameless deity to preserve their power.
-                You interrupt their ceremony, but it's too late—you're caught, and killed. But death isn't the end.<br><br>
-                You're trapped in a 3-day loop, waking again and again in your safehouse with only your Journal to keep track of your progress. Each loop brings new clues, deeper secrets, and darker truths.
-                Can you stop the ritual before the clock runs out and break the cursed cycle? </p>
+              <p> As the lead programmer on this Unreal Engine 5 project, I designed and implemented core gameplay systems with a focus on player interaction, dialogue, and immersive mechanics:<br><br>
+              <i class="fas fa-gamepad"></i><b> Core Gameplay Systems</b><br>
+              <ul class="list">
+                <li>Built a complete detective character with movement, camera control, and state management</li>
+                <li>Implemented interactive systems including hiding mechanics and NPC interactions</li>
+                <li>Created smooth camera transitions and player movement with Enhanced Input</li>
+              </ul><br>
+              <i class="fas fa-comments"></i><b style="font-size: 20px;"> Advanced Dialogue System</b><br>
+              <ul class="list">
+                <li>Developed a robust dialogue system using DataTables for flexible conversation management</li>
+                <li>Implemented branching dialogue with choice-based progression</li>
+                <li>Integrated Gameplay Tags for tracking player progress and dialogue flags</li>
+                <li>Created UI widgets for dialogue display and player choices</li>
+              </ul>
+            </p>
             </div>
           </div>
           <div class="project-details">
             <div class="desc">
-              <h1 style="font-size: 35px;">What I learned</h1>
-              <hr>
-              <p> You're Detective John Doe, and you've stumbled upon an ancient evil — Occult families performing a ritual known as "The Chalk Circle." Sacrifices to a nameless deity to preserve their power.
-                You interrupt their ceremony, but it's too late—you're caught, and killed. But death isn't the end.<br><br>
-                You're trapped in a 3-day loop, waking again and again in your safehouse with only your Journal to keep track of your progress. Each loop brings new clues, deeper secrets, and darker truths.
-                Can you stop the ritual before the clock runs out and break the cursed cycle? </p>
+              <p> <i class="fas fa-tools"></i><b> Technical Architecture</b><br>
+              <ul class="list">
+                <li>Built a complete detective character with movement, camera control, and state management</li>
+                <li>Implemented interactive systems including hiding mechanics and NPC interactions</li>
+                <li>Created smooth camera transitions and player movement with Enhanced Input</li>
+              </ul><br>
+              <i class="fas fa-wrench"></i><b style="font-size: 20px;"> Ongoing Development</b><br>
+              <ul class="list">
+                <li>Expanding dialogue tag system for complex quest tracking</li>
+                <li>Enhancing journal/clue collection mechanics</li>
+                <li>Optimizing interaction systems and player feedback</li>
+                <li>Maintaining clean, documented codebase for team collaboration</li>
+              </ul>
             </div>
-            <img src="../Images/DieAgain/DAD_Fire.png">
+            <div class="project-images">
+              <img src="../Images/DieAgain/DAD_Fire.png">
+            </div>
+            
           </div>
     </div>
 </body>

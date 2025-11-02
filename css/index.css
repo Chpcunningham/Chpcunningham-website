@@ -106,13 +106,11 @@
         color: rgba(226, 48, 48, 0.479);
         border: 2px solid rgba(226, 48, 48, 0.479);
       }
-
       .content_wrapper .projects {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         justify-content: center;
         gap: 20px;
-        flex-wrap: wrap;
       }
       .project-card {
         width: 400px;
