@@ -18,5 +18,3 @@ instagram.addEventListener("click", function(){
 resume.addEventListener("click", function() {
     window.open("Files/ConnorCunninghamCV.pdf", ":_blank");
 })
-
-document.querySelectorAll()

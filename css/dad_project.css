@@ -135,7 +135,6 @@
         font-weight: bold;
         transform: scale(1.04);
       }
-      /* Styles for project-details (was missing) */
       .project-details{
         margin: 24px 0;
         display: flex;

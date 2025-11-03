@@ -20,19 +20,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.min.css"
     />
+    <link
+     rel="stylesheet"
+     href="../css/fug_project.css"/>
     <style>
-        * {
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
       body {
         font-family: Arial, sans-serif;
-        background-color: #121212;
+        background-color: #2c1703;
       }
       hr {
         border: none;
-        border-top: 1px solid #313131;
+        border-top: 1px solid #727272;
         margin: 20px 20px;
       }
       .content_wrapper {
@@ -48,9 +51,9 @@
         position: sticky;
         z-index: 1000;
         top: 0;
-        width: 100%;
-        max-width: 1245px;
-        background-color: #121212;
+        width: 1400px;
+        max-width: 1246px;
+        background-color: #2c1703;
         flex-direction: row;
         align-items: center; /* vertically center header content */
         justify-content: flex-start;
@@ -81,7 +84,6 @@
         font-family: "Iceland", sans-serif;
         font-size: 24px;
         font-weight: normal;
-        margin-top: 6px;
       }
       .game-link {
         color: #f5e8d8;
@@ -90,6 +92,115 @@
       }
       .game-link:hover {
         color: rgba(226, 48, 48, 0.479);
+      }
+      .profile-img {
+        margin: 24px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .profile-img img{
+        width:auto;
+        border-radius: 5%;
+      }
+      .profile-img .desc{
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+        color: #f5e8d8;
+        font-family: "Iceland", sans-serif;
+      }
+      .profile-img .desc p{
+        text-align: center;
+        font-size: 23px;
+      }
+      .project-info{
+        text-align: left;
+        background-color: #3f2707;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+        padding: 20px;
+        mask-image: 
+          linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%),
+          linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+        mask-composite: intersect;
+        -webkit-mask-image: 
+          linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%),
+          linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+        -webkit-mask-composite: source-in;
+      }
+      .project-info h1{
+        font-size: 30px;
+        padding-left: 10px;
+        color: #f5e8d8;
+        font-family: "Iceland", sans-serif;
+      }
+      .project-info ul{
+        list-style: none;
+        padding-left: 40px;
+        padding-right: 40px;
+        color: #f5e8d8;
+        font-size: 25px;
+      }
+      .project-info .teamflex{
+        padding-top: 15px;
+        display: flex;
+        gap: 100px;
+        text-align: center;
+        justify-content: center;
+      }
+      .project-info .teamflex a{
+        border: 1px solid #f5e8d8;
+        border-radius: 5px;
+        padding: 5px;
+        text-decoration: none;
+        color: #f5e8d8;
+        display: inline-block; /* allow transform to apply */
+        transition: border-color 0.5s ease, border-width 0.25s ease, color 0.2s ease, transform 0.2s ease;
+      }
+      .project-info .teamflex a:hover{
+        border-width: 2px;
+        border-color: aliceblue;
+        color: aliceblue;
+        transform: scale(1.02);
+      }
+      .project-details{
+        margin: 24px 0;
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        color: #f5e8d8;
+      }
+      .project-details .project-images{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        flex: 0 0 550px; /* fixed left column width for images */
+      }
+      .project-details .project-images img{
+        width: 100%;
+        border-radius: 20px;
+        display: block;
+      }
+      .project-details .desc{
+        flex: 1; 
+      }
+      .project-details h1{
+        font-family: "Iceland", sans-serif;
+        color: #f5e8d8;
+        font-size: 25px;
+      }
+      .project-details .desc p{
+        text-align: left;
+        font-size: 22px;
+        line-height: 1.3;
+      }
+      .project-details .list{
+        text-align: left;
+        margin-left: 30px;
+        font-size: 20px;
+        line-height: 1.5;
       }
     </style>
 </head>
@@ -102,10 +213,80 @@
           <div class="game-subtitle">First-person horror escape room</div>
             </div>
             <div class="sociallinks">
-                <a class="game-link" href="https://github.com/Chpcunningham/ProjectReset" id="github"
+                <a class="game-link" href="https://github.com/Chpcunningham/Fugam-" id="github"
             ><i class="fab fa-github" style="font-size: 32px"></i
           ></a>
             </div>
+        </div>
+        <div class="profile-img">
+          <img src="../Images/Fugame/2-Title.png">
+          <hr style="color:#f5e8d8"/>
+          <div class="desc">
+            <img src="../Images/Fugame/Fugame.png" style="width: 600px;">
+            <p><b>You wake up in a maximum-security cell with no memory of your crime. </b><br>
+              The prison is abandoned, but you're not alone. The prison seems to have a mind of its own, sealing every exit and plunging the facility into an ominous, crimson-lit lockdown. <br><br>
+              To escape, you must outsmart the automated security system by restoring power, forcing open old vents, and scavenging tools from the crumbling environment. 
+              But every resource is precious—use a screwdriver to pry open a vent, and it shatters in your hand. Find a key to unlock a door, and it breaks in the lock.The clock is ticking. <br><br>
+              Can you piece together the clues and engineer your freedom before the system permanently seals your fate?</p>
+          </div>
+        </div>
+        <div class="project-info">
+          <h1 style="text-indent: 25px; font-size: 40px;">Project Info</h1>
+          <hr style="color:#f5e8d8"/>
+          <ul>
+              <li>
+                <i class="fas fa-user-alt"></i> Role: Gameplay Programmer
+              </li>
+              <br>
+              <li>
+                <i class="fa fa-users"></i>Team Members:
+              </li>
+              <div class="teamflex">
+                <a href="https://chpcunningham.github.io/Chpcunningham-website/">Connor Cunningham<br> <i class=" 	far fa-address-card"></i></a>
+                <a href="https://mahanph.itch.io/">MahanPH <br><i class="fa-brands fa-itch-io"></i></a>
+                <a href="https://github.com/Aleksei-Spiridonov">Aleksei Spiridonov <br><i class="fab fa-github"></i></a>
+                <a href="linkedin.com/in/iskander-taniyev">Iskander Taniyev <br><i class="fab fa-linkedin"></i
+          ></a>
+              </div>
+              <br>
+              <li>
+                <i class="fas fa-tools"></i> Engine: Unity, C#
+              </li>
+            </ul>
+        </div>
+        <hr>
+        <div class="project-details">
+          <div class="project-images">
+            <img src="../Images/Fugame/Title.png">
+            <img src="../Images/Fugame/scene1.png">
+          </div>
+          <div class="desc">
+            <h1 style="font-size: 35px;">Programming</h1>
+            <hr>
+            <p>As a puzzle & gameplay programmer for this prison escape game, I designed and implemented core interactive systems:<br><br>
+              <i class="fas fa-gamepad"></i><b> Core Interaction System</b><br>
+              <ul class="list">
+                <li>Used modular InteractableObject system supporting multiple interaction types</li>
+                <li>Dual selection system (raycast + angular) for intuitive object interaction</li>
+                <li>Inventory integration for item-based puzzle solving</li>
+              </ul><br>
+              <i class="fas fa-lock"></i><b style="font-size: 20px;"> Puzzle Systems & Mechanics</b><br>
+              <ul class="list">
+                <li>Generator Puzzle: Multi-stage power restoration requiring specific items</li>
+                <li>Environmental Puzzles: Locked doors, vents, and drawers with tool requirements</li>
+                <li>Consumable Items: Tools that break after use, adding resource tension</li>
+                <li>Progression Logic: State-based puzzle completion with dependency checks</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <div class="project-details" style="flex-direction: column; justify-content: center;">
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;max-width:900px;margin:0 auto;padding:18px;">
+            <p style="font-size: 20px;"><i class="fas fa-bullseye"></i>
+            Design Focus<br><br>
+            Our design philosophy centered on creating a logical, observation-based puzzle flow.
+            We used atmospheric lighting and sound for feedback, all guided by an intuitive, contextual UI.</p>
+          </div>
         </div>
     </div>
 </body>
