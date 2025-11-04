@@ -16,6 +16,8 @@
         justify-content: center;
         padding-bottom: 6px;
         align-items: center;
+        font-family: "Iceland", sans-serif;
+        font-size: 50px;
         text-align: center;
         color: #f5e8d8;
       }
