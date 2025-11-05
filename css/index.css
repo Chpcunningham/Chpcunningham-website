@@ -60,7 +60,6 @@
           width: 250px; /* Fixed width */
           height: 250px; /* Fixed height */
           object-fit: cover; /* Ensure image maintains aspect ratio */
-          max-width: 100%;
       }
       .about-me{
         padding: 15px;
