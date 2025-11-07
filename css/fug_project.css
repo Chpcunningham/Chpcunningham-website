@@ -176,3 +176,18 @@
         font-size: 20px;
         line-height: 1.5;
       }
+
+      /* Responsive adjustments for small screens */
+      @media (max-width: 767px) {
+        .content_wrapper { padding: 0 12px; }
+        .content_wrapper .header { padding: 8px; width: 110%; }
+        .game-title { font-size: 24px; }
+        .game-subtitle { font-size: 14px; }
+        .profile-img { flex-direction: column;}
+        .project-details { flex-direction: column; gap: 12px; }
+        .project-details .project-images { flex: 0 0 auto; width: 100%; }
+        .project-details .desc { width: 100%; }
+        .project-images img, .profile-img img { width: 100%; height: auto; max-width: 100%; }
+        .project-info ul { font-size: 18px; padding-left: 16px; padding-right: 16px; }
+        .teamflex { gap: 12px; flex-wrap: wrap; }
+      }

@@ -12,7 +12,7 @@
         border-top: 1px solid #313131;
         margin: 20px 20px;
       }
-      .divide-content {
+      .divide-content{
         justify-content: center;
         padding-bottom: 6px;
         align-items: center;
@@ -24,26 +24,22 @@
       .content_wrapper {
         max-width: 1210px;
         margin: 0 auto;
-        margin-top: 0px;
-        margin-right: auto;
-        margin-bottom: 0px;
-        margin-left: auto;
+        padding: 0 12px;
       }
       .content_wrapper .header {
         display: flex;
         position: sticky;
         z-index: 1000;
         top: 0;
-        width: 1400px;
-        max-width: 1246px;
         background-color: #121212;
         flex-direction: row;
         align-items: center; /* vertically center header content */
         justify-content: flex-start;
         text-align: left;
-        margin: 0 -16px 16px; /* removed negative top margin which pushed the header off-screen */
+        margin: 0 -16px 16px;
         gap: 16px;
         padding: 8px 8px;
+        width: 100%;
       }
       .content_wrapper .header .sociallinks {
         display: flex;
@@ -55,16 +51,20 @@
       }
       .profile-img {
         border-radius: 50%;
-        margin: 16px;
+        margin: 16px auto;
         border-style: groove;
-        width: 75%;
-        height: 75%;
+        width: 150px;
+        max-width: 40%;
+        height: auto;
       }
       .about-me{
         padding: 15px;
         display: flex;
         align-items: center;
         text-align: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
       .about-me h4{
         font-size: medium;
@@ -110,13 +110,14 @@
       }
       .content_wrapper .projects {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         justify-content: center;
         gap: 20px;
       }
       .project-card {
-        width: 400px;
-        height: 425;
+        max-width: 400px;
+        width: 100%;
+        min-height: 425px;
         background-color: #313131;
         color: #f5e8d8;
         border: 2px solid #f5e8d8;
@@ -129,8 +130,69 @@
         width: 100%;
         height: 250px;
         object-fit: cover;
-        display: flex;
+        display: block;
       }
+
+      /* Slider styles */
+      .slider-wrapper {
+        position: relative;
+        margin: 0 auto 24px;
+        padding: 8px 0;
+      }
+      .projects-slider {
+        overflow: hidden;
+      }
+      .projects-slider-inner {
+        display: flex;
+        gap: 20px;
+        transition: transform 300ms ease;
+        will-change: transform;
+        padding-bottom: 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+      }
+      .project-slide {
+        flex: 0 0 calc(100% - 40px);
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        scroll-snap-align: center;
+      }
+
+      /* show multiple slides on larger screens */
+      @media (min-width: 768px) {
+        .project-slide { flex: 0 0 calc(50% - 30px); }
+      }
+      @media (min-width: 992px) {
+        .project-slide { flex: 0 0 calc(33.333% - 26.66px); }
+      }
+
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.6);
+        color: #f5e8d8;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10; /* ensure buttons sit above the slider content and are clickable */
+        pointer-events: auto;
+      }
+      .slider-btn.prev { left: 6px; }
+      .slider-btn.next { right: 6px; }
+      .slider-btn:focus { outline: 2px solid rgba(226,48,48,0.5); }
+
+  /* make inner scrollable by touch as fallback and hide scrollbar */
+  .projects-slider-inner::-webkit-scrollbar { display: none; }
+  .projects-slider-inner { -ms-overflow-style: none; scrollbar-width: none; }
       .project-card h2 {
         margin: 5px;
         font-family: "Iceland", sans-serif;
