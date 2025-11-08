@@ -74,9 +74,11 @@
         text-align: left;
       }
       .profile-img img{
-        width: 600px;
+        width: 650px;
+        height: 550px;
         max-width: 100%;
         border-radius: 25%;
+        align-items: center;
       }
       .profile-img .desc{
         color: #f5e8d8;
@@ -175,7 +177,7 @@
       }
 
       /* Mobile responsive fixes */
-      @media (max-width: 767px) {
+      @media (max-width: 900px) {
         .content_wrapper { padding: 0 12px; }
         .content_wrapper .header { padding: 8px; width: 110%; }
         .game-title { font-size: 28px; }

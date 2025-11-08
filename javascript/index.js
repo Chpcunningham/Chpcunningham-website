@@ -16,15 +16,18 @@ instagram.addEventListener("click", function(){
     window.open("", "_blank");
 })
 resume.addEventListener("click", function() {
-    window.open("Files/ConnorCunninghamCV.pdf", ":_blank");
+    window.open("Files/ConnorCunninghamCV.pdf", "_blank");
 })
 
-/* Projects slider logic */
+/* Projects slider logic - enable on small/tablet, disable on desktop. */
 ;(function(){
-    const prev = document.querySelector('.slider-btn.prev');
-    const next = document.querySelector('.slider-btn.next');
-    const inner = document.querySelector('.projects-slider-inner');
-    if (!inner || !prev || !next) return;
+    const mq = window.matchMedia('(max-width: 1023px)');
+    let enabled = false;
+
+    // cached elements and handlers so we can remove listeners later
+    let prev, next, inner;
+    let onPrev, onNext, onPointerDown, onPointerMove, onPointerUp, onPointerCancel;
+    let isDown = false, startX = 0, scrollLeft = 0;
 
     const getSlideWidth = () => {
         const slide = inner.querySelector('.project-slide');
@@ -34,27 +37,74 @@ resume.addEventListener("click", function() {
         return slide.getBoundingClientRect().width + gap;
     }
 
-    prev.addEventListener('click', () => {
-        inner.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
-    });
-    next.addEventListener('click', () => {
-        inner.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
-    });
+    function enableSlider() {
+        if (enabled) return;
+        prev = document.querySelector('.slider-btn.prev');
+        next = document.querySelector('.slider-btn.next');
+        inner = document.querySelector('.projects-slider-inner');
+        if (!inner || !prev || !next) return; // nothing to do
 
-    // Allow dragging on desktop/touch swipe on mobile
-    let isDown = false, startX, scrollLeft;
-    inner.addEventListener('pointerdown', (e) => {
-        isDown = true;
-        inner.setPointerCapture(e.pointerId);
-        startX = e.clientX;
-        scrollLeft = inner.scrollLeft;
-    });
-    inner.addEventListener('pointermove', (e) => {
-        if (!isDown) return;
-        const x = e.clientX;
-        const walk = (startX - x);
-        inner.scrollLeft = scrollLeft + walk;
-    });
-    inner.addEventListener('pointerup', (e) => { isDown = false; inner.releasePointerCapture(e.pointerId); });
-    inner.addEventListener('pointercancel', () => { isDown = false; });
+        onPrev = () => inner.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
+        onNext = () => inner.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
+
+        prev.addEventListener('click', onPrev);
+        next.addEventListener('click', onNext);
+
+        // pointer handlers
+        onPointerDown = (e) => {
+            if (e.target && e.target.closest && e.target.closest('a')) return;
+            isDown = true;
+            try { inner.setPointerCapture(e.pointerId); } catch (err) {}
+            startX = e.clientX;
+            scrollLeft = inner.scrollLeft;
+        };
+        onPointerMove = (e) => {
+            if (!isDown) return;
+            const x = e.clientX;
+            const walk = (startX - x);
+            inner.scrollLeft = scrollLeft + walk;
+        };
+        onPointerUp = (e) => { isDown = false; try { inner.releasePointerCapture(e.pointerId); } catch(err){} };
+        onPointerCancel = () => { isDown = false; };
+
+        inner.addEventListener('pointerdown', onPointerDown);
+        inner.addEventListener('pointermove', onPointerMove);
+        inner.addEventListener('pointerup', onPointerUp);
+        inner.addEventListener('pointercancel', onPointerCancel);
+
+        enabled = true;
+    }
+
+    function disableSlider() {
+        if (!enabled) return;
+        if (prev && onPrev) prev.removeEventListener('click', onPrev);
+        if (next && onNext) next.removeEventListener('click', onNext);
+        if (inner) {
+            inner.removeEventListener('pointerdown', onPointerDown);
+            inner.removeEventListener('pointermove', onPointerMove);
+            inner.removeEventListener('pointerup', onPointerUp);
+            inner.removeEventListener('pointercancel', onPointerCancel);
+        }
+
+        // reset state
+        isDown = false;
+        startX = 0;
+        scrollLeft = 0;
+        prev = next = inner = null;
+        onPrev = onNext = onPointerDown = onPointerMove = onPointerUp = onPointerCancel = null;
+        enabled = false;
+    }
+
+    // initialize based on current viewport
+    if (mq.matches) enableSlider();
+
+    // listen for breakpoint changes
+    if (mq.addEventListener) {
+        mq.addEventListener('change', (e) => {
+            if (e.matches) enableSlider(); else disableSlider();
+        });
+    } else if (mq.addListener) {
+        mq.addListener((e) => { if (e.matches) enableSlider(); else disableSlider(); });
+    }
+
 })();
