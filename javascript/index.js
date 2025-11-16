@@ -12,7 +12,7 @@ github.addEventListener("click", function(){
     window.open("https://github.com/Chpcunningham", "_blank");
 });
 
-instagram.addEventListener("click", function(){
+email.addEventListener("click", function(){
     window.open("mailto:chpcunningham@gmail.com", "_blank");
 })
 resume.addEventListener("click", function() {
