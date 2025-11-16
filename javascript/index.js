@@ -1,6 +1,6 @@
 let linkedin = document.getElementById("linkedin");
 let github = document.getElementById("github");
-let instagram = document.getElementById("instagram");
+let email = document.getElementById("email");
 let resume = document.getElementById("resume");
 
 
@@ -13,18 +13,17 @@ github.addEventListener("click", function(){
 });
 
 instagram.addEventListener("click", function(){
-    window.open("", "_blank");
+    window.open("mailto:chpcunningham@gmail.com", "_blank");
 })
 resume.addEventListener("click", function() {
     window.open("Files/ConnorCunninghamCV.pdf", "_blank");
 })
 
-/* Projects slider logic - enable on small/tablet, disable on desktop. */
+//Slider Logic
 ;(function(){
     const mq = window.matchMedia('(max-width: 1023px)');
     let enabled = false;
 
-    // cached elements and handlers so we can remove listeners later
     let prev, next, inner;
     let onPrev, onNext, onPointerDown, onPointerMove, onPointerUp, onPointerCancel;
     let isDown = false, startX = 0, scrollLeft = 0;
