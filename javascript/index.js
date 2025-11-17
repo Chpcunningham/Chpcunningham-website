@@ -19,6 +19,56 @@ resume.addEventListener("click", function() {
     window.open("Files/ConnorCunninghamCV.pdf", "_blank");
 })
 
+// Mobile social menu toggle
+(function(){
+    const toggle = document.querySelector('.social-toggle');
+    const social = document.querySelector('.sociallinks');
+    if (!toggle || !social) return;
+
+    toggle.setAttribute('aria-expanded', 'false');
+
+    function closeMenu() {
+        if (social.classList.contains('open')) {
+            social.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    function openMenu() {
+        if (!social.classList.contains('open')) {
+            social.classList.add('open');
+            toggle.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    toggle.addEventListener('click', function(e){
+        e.stopPropagation();
+        if (social.classList.contains('open')) closeMenu(); else openMenu();
+    });
+
+    // keyboard support: Enter / Space toggles, Esc closes
+    toggle.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggle.click();
+        }
+        if (e.key === 'Escape') {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('click', function(e){
+        if (!social.classList.contains('open')) return;
+        if (!e.target.closest('.sociallinks') && !e.target.closest('.social-toggle')) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMenu(); });
+
+    window.addEventListener('resize', function(){ if (window.innerWidth > 500) closeMenu(); });
+})();
+
 //Slider Logic
 ;(function(){
     const mq = window.matchMedia('(max-width: 1023px)');
@@ -102,8 +152,6 @@ resume.addEventListener("click", function() {
         mq.addEventListener('change', (e) => {
             if (e.matches) enableSlider(); else disableSlider();
         });
-    } else if (mq.addListener) {
-        mq.addListener((e) => { if (e.matches) enableSlider(); else disableSlider(); });
-    }
+    } 
 
 })();
