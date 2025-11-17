@@ -1,0 +1,58 @@
+/* Mobile*/
+@media (max-width: 500px) {
+  .content_wrapper .header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+    width: 100% !important;
+    padding: 8px 12px !important;
+  }
+
+  .content_wrapper .header .name {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    font-size: 28px !important; /* make name larger than subname on small screens */
+  }
+
+  .content_wrapper .header .subname {
+    display: block !important;
+    text-align: center !important;
+    margin-top: 4px !important;
+    font-size: 16px !important; /* keep subname smaller than name */
+  }
+
+  .content_wrapper .header .sociallinks {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    margin: 6px 0 0 0 !important;
+    width: auto !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .content_wrapper .header .sociallinks .link,
+  .content_wrapper .header .sociallinks .link-resume {
+    padding: 6px 8px !important;
+  }
+}
+
+/* Desktop override: ensure name is larger than subname on wider screens */
+@media (min-width: 501px) {
+  .content_wrapper .header .name {
+    font-size: 50px !important;
+    line-height: 1.1 !important;
+  }
+  .content_wrapper .header .subname {
+    font-size: 24px !important;
+  }
+}

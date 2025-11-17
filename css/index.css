@@ -129,7 +129,6 @@ hr {
 }
 .project-card {
   width: 400px;
-  height: 425;
   background-color: #313131;
   color: #f5e8d8;
   border: 2px solid #f5e8d8;
@@ -478,6 +477,29 @@ hr {
   /* hide default inline layout spacing on very small screens */
   .content_wrapper .header .sociallinks { margin-left: 0; }
 }
+
+/* Small-screen: place social links under profile image and center name/subname */
+@media (max-width: 500px) {
+  /* hide the header sociallinks on small screens (we show the mobile copy under the profile image) */
+  .content_wrapper .header .sociallinks { display: none !important; }
+
+  /* center name and subname in header */
+  .content_wrapper .header .name {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .content_wrapper .header .subname { display: block; text-align: center; margin-top: 6px; }
+
+  /* show the mobile sociallinks placed under the profile image */
+  .sociallinks-mobile {
+    display: flex !important;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+    width: 100%;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -513,7 +535,7 @@ hr {
   .name { font-size: 20px; line-height: 1; }
   .subname { font-size: 14px; }
 }
-
+}
 /* Social links dropdown for small screens (≤500px). Keeps desktop layout intact. */
 @media (max-width: 500px) {
   .header { position: relative; }
@@ -563,7 +585,7 @@ hr {
   /* hide default inline layout spacing on very small screens */
   .content_wrapper .header .sociallinks { margin-left: 0; }
 
-
+}
 @media (min-width: 768px) {
   .project-slide {
     flex: 0 0 calc(50% - 30px);
@@ -589,7 +611,7 @@ hr {
     max-width: 280px;
     height: auto;
   }
-}
+
 
 @media (max-width: 1023px) {
   .projects-slider-inner {
@@ -745,3 +767,100 @@ hr {
   /* hide default inline layout spacing on very small screens */
   .content_wrapper .header .sociallinks { margin-left: 0; }
 }
+
+/* Cleaned: removed an accidental global override that forced the header
+  sociallinks into a column layout for all screen sizes. Mobile-specific
+  rules below control the small-screen behavior. */
+
+/* -------- Mobile: center header and show header social links under name -------- */
+@media (max-width: 500px) {
+  .content_wrapper .header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    width: 100%;
+    padding: 8px 12px;
+  }
+
+  .content_wrapper .header .name {
+    width: 100%;
+    text-align: center;
+  }
+  .content_wrapper .header .name .subname {
+    display: block;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  /* keep header social links visible and laid out horizontally below the name */
+  .content_wrapper .header .sociallinks {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px;
+    margin: 6px 0 0 0 !important;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    justify-content: center;
+    align-items: center;
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .content_wrapper .header .sociallinks .link,
+  .content_wrapper .header .sociallinks .link-resume {
+    padding: 6px 8px;
+  }
+}
+
+/* ---------- Strong mobile-only override (last in file) ---------- */
+@media (max-width: 500px) {
+  /* stack header content and center text */
+  .content_wrapper .header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+    width: 100% !important;
+    padding: 8px 12px !important;
+  }
+
+  .content_wrapper .header .name {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    font-size: 20px !important;
+  }
+
+  .content_wrapper .header .subname {
+    display: block !important;
+    text-align: center !important;
+    margin-top: 4px !important;
+    font-size: 14px !important;
+  }
+
+  /* ensure header social links appear directly under the subname as a horizontal row */
+  .content_wrapper .header .sociallinks {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    margin: 6px 0 0 0 !important;
+    width: auto !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .content_wrapper .header .sociallinks .link,
+  .content_wrapper .header .sociallinks .link-resume {
+    padding: 6px 8px !important;
+  }
+}}
