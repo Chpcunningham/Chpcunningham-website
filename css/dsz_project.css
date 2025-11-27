@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #35424A;
+}
+hr {
+  border: none;
+  border-top: 1px solid #313131;
+  margin: 20px 20px;
+}
+.content_wrapper {
+  max-width: 1210px;
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+}
+.content_wrapper .header {
+  display: flex;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  width: 1400px;
+  max-width: 1246px;
+  background-color: #35424A;
+  flex-direction: row;
+  align-items: center; /* vertically center header content */
+  justify-content: flex-start;
+  text-align: left;
+  margin: 0 -16px 16px; /*Keeps header from falling off the screen*/
+  gap: 16px;
+  padding: 8px 16px;
+}
+.content_wrapper .header .sociallinks {
+  display: flex;
+  gap: 12px;
+  height: auto;
+  align-items: center;
+  padding-top: 0;
+  margin-left: auto; /* push to the far right of the header */
+}
+.game-title {
+  color: #f5e8d8;
+  text-align: left;
+  align-items: left;
+  font-family: "Iceland", sans-serif;
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 1.1;
+}
+.game-subtitle {
+  color: #f5e8d8;
+  font-family: "Iceland", sans-serif;
+  font-size: 24px;
+  font-weight: normal;
+  margin-top: 6px;
+}
+.game-link {
+  color: #f5e8d8;
+  text-decoration: none;
+  padding: 6px 10px;
+}
+.game-link:hover {
+  color: rgba(226, 48, 48, 0.479);
+}
+.profile-img {
+  margin: 24px 0;
+  display: flex;
+  text-align: left;
+}
+.profile-img img{
+  width: 600px;
+  border-radius: 25%;
+}
+.profile-img .desc{
+  color: #f5e8d8;
+  font-family: "Iceland", sans-serif;
+}
+.profile-img .desc p{
+  text-align: center;
+  line-height: 35px;
+  font-size: 25px;
+}
+.project-info{
+  text-align: left;
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 24px 30px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(107,78,61,0.96) 0%, rgba(80,58,45,0.96) 100%);
+  border: 1px solid rgba(245,232,216,0.04);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  color: #f5e8d8;
+}
+.project-info h1{
+  font-size: 26px;
+  margin: 0 0 10px 0;
+  color: #fff6e8;
+  font-family: "Iceland", sans-serif;
+}
+.project-info ul{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px 0;
+  color: #f5e8d8;
+  font-size: 20px;
+  line-height: 1.5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 24px;
+  align-items: start;
+}
+.project-info ul li{
+  position: relative;
+  padding-left: 24px;
+}
+.project-info ul li::before{
+  content: "▹";
+  position: absolute;
+  left: 0;
+  top: 0.18rem;
+  color: #f48c8c;
+  font-size: 16px;
+  line-height: 1;
+}
+.project-info .teamflex{
+  padding-top: 8px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.project-info .teamflex a{
+  border: 1px solid rgba(245,232,216,0.18);
+  background: rgba(255,255,255,0.02);
+  border-radius: 999px;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: #f5e8d8;
+  display: inline-block;
+  transition: transform 0.14s ease, background 0.2s ease, box-shadow 0.12s ease, color 0.12s ease;
+  font-size: 15px;
+}
+.project-info .teamflex a:hover{
+  transform: translateY(-3px) scale(1.02);
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  color: #fff;
+}
+.project-details{
+  margin: 24px 0;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  color: #f5e8d8;
+}
+.project-details .project-images{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 0 0 550px; /* fixed left column width for images */
+}
+.project-details .project-images img{
+  width: 100%;
+  border-radius: 20px;
+  display: block;
+}
+.project-details .desc{
+  flex: 1;
+}
+.project-details h1{
+  font-family: "Iceland", sans-serif;
+  color: #f5e8d8;
+  font-size: 25px;
+}
+.project-details .desc p{
+  text-align: left;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+/* Preserve inline styles moved from HTML */
+.project-info-title{ text-indent: 25px; font-size: 40px; }
+.project-role-title{ font-size: 35px; }
+.add-animal-img{ border-radius: 10px; display: block; max-width: 100%; }
+
+/* Mobile responsive fixes */
+@media (max-width: 900px) {
+  .content_wrapper { padding: 0 12px; }
+  .content_wrapper .header { padding: 8px; width: 110%; }
+  .game-title { font-size: 28px; }
+  .game-subtitle { font-size: 16px; }
+  .profile-img { flex-direction: column;}
+  .project-info .teamflex { gap: 5px; flex-direction: column;}
+  .project-details { flex-direction: column; gap: 12px; }
+  .project-details .project-images { flex: 0 0 auto; width: 100%; }
+  .project-details .desc { width: 100%; }
+  .project-images img, .profile-img img { width: 100%; height: auto; max-width: 100%; }
+  .project-info ul { font-size: 18px; padding-left: 16px; padding-right: 16px; }
+  .teamflex { gap: 12px; flex-wrap: wrap; }
+}
+
+/* Extra small screens: improve project-info spacing and single-column lists */
+@media (max-width: 500px) {
+  .project-info{
+    padding: 14px 12px;
+    margin: 18px auto;
+    border-radius: 12px;
+  }
+
+  .project-info h1{ font-size: 22px; margin-bottom: 8px; }
+
+  .project-info ul{
+    grid-template-columns: 1fr;
+    gap: 8px 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .project-info ul li{ padding-left: 20px; }
+  .project-info ul li::before{ left: 0; top: 0.14rem; font-size: 15px; }
+
+  .project-info .teamflex{ gap: 8px; justify-content: center; padding-top: 10px; }
+
+  .project-details { flex-direction: column; gap: 14px; }
+  .project-details .project-images { flex: 0 0 auto; width: 100%; }
+  .profile-img img, .project-images img { width: 100%; height: auto; max-width: 100%; }
+  .project-details .desc p{ font-size: 18px; }
+}
