@@ -69,7 +69,8 @@ body{font-family:Arial, sans-serif;background:#121212;color:#f5e8d8}
 
 /* Responsive Screen depending on sizes */
 @media (min-width:375px){
-  .content_wrapper .header .name{font-size:20px}
+  .content_wrapper .header .name{font-size:32px}
+  .content_wrapper .header .subname{font-size:18px}
   .profile-img{width:220px;height:220px}
   .project-slide{flex:0 0 calc(50% - 30px)}
 }
@@ -81,6 +82,8 @@ body{font-family:Arial, sans-serif;background:#121212;color:#f5e8d8}
 @media (min-width:992px){
   .project-slide{flex:0 0 calc(33.333% - 26.66px)}
   .profile-img{width:60%;max-width:280px;height:280px}
+  .content_wrapper .header .name{font-size:50px}
+  .content_wrapper .header .subname{font-size:24px}
 }
 
 @media (min-width:1024px){
