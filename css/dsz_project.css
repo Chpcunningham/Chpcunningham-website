@@ -166,26 +166,30 @@ hr {
   gap: 16px;
   flex: 0 0 550px; /* fixed left column width for images */
 }
+.project-details .desc h1{
+  font-family: "Iceland", sans-serif;
+  font-size:45px;
+}
 .project-details .project-images img{
   width: 100%;
   border-radius: 20px;
   display: block;
-}
-.project-details .desc{
-  flex: 1;
-}
-.project-details h1{
-  font-family: "Iceland", sans-serif;
-  color: #f5e8d8;
-  font-size: 25px;
 }
 .project-details .desc p{
   text-align: left;
   font-size: 22px;
   line-height: 1.3;
 }
+.project-details .list{
+  text-align: left;
+  margin-left: 30px;
+  font-size: 22px;
+  line-height: 1.5;
+}
+.project-details .list li{
+  font-size: 22px;
+}
 
-/* Preserve inline styles moved from HTML */
 .project-info-title{ text-indent: 25px; font-size: 40px; }
 .project-role-title{ font-size: 35px; }
 .add-animal-img{ border-radius: 10px; display: block; max-width: 100%; }

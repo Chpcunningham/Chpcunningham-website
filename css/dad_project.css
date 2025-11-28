@@ -25,7 +25,7 @@
         position: sticky;
         z-index: 1000;
         top: 0;
-        width: 100%;
+        width: 1400px;
         max-width: 1246px;
         background-color: #121212;
         flex-direction: row;
@@ -132,7 +132,6 @@
         font-size: 18px;
         line-height: 1;
       }
-      /* allow inner lines (like the Engine span) to show their own bullet */
       .project-info ul li .engine{
         display: block;
         position: relative;
