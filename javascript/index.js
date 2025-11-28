@@ -20,6 +20,8 @@ resume.addEventListener("click", function() {
 });
 
 // Slider Logic (mobile-enabled slider, desktop shows all)
+
+// On larger screens = disabled
 ;(function(){
     const mq = window.matchMedia('(max-width: 1023px)');
     let enabled = false;
@@ -28,6 +30,7 @@ resume.addEventListener("click", function() {
     let onPrev, onNext, onPointerDown, onPointerMove, onPointerUp, onPointerCancel;
     let isDown = false, startX = 0, scrollLeft = 0;
 
+    // Return the scroll width length needed to show availble cards
     const getSlideWidth = () => {
         const slide = inner.querySelector('.project-slide');
         if (!slide) return inner.clientWidth;
@@ -36,6 +39,7 @@ resume.addEventListener("click", function() {
         return slide.getBoundingClientRect().width + gap;
     }
 
+    // Enable the slider interactions for small viewports + pointers for touch input (This took me a while)
     function enableSlider() {
         if (enabled) return;
         prev = document.querySelector('.slider-btn.prev');
@@ -60,8 +64,8 @@ resume.addEventListener("click", function() {
         onPointerMove = (e) => {
             if (!isDown) return;
             const x = e.clientX;
-            const walk = (startX - x);
-            inner.scrollLeft = scrollLeft + walk;
+            const move = (startX - x);
+            inner.scrollLeft = scrollLeft + move;
         };
         onPointerUp = (e) => { isDown = false; try { inner.releasePointerCapture(e.pointerId); } catch(err){} };
         onPointerCancel = () => { isDown = false; };
@@ -74,6 +78,7 @@ resume.addEventListener("click", function() {
         enabled = true;
     }
 
+    // Disable the slider 
     function disableSlider() {
         if (!enabled) return;
         if (prev && onPrev) prev.removeEventListener('click', onPrev);
