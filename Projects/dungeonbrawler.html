@@ -20,78 +20,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.min.css"
     />
-    <style>
-        * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #121212;
-      }
-      hr {
-        border: none;
-        border-top: 1px solid #313131;
-        margin: 20px 20px;
-      }
-      .content_wrapper {
-        max-width: 1210px;
-        margin: 0 auto;
-        margin-top: 0px;
-        margin-right: auto;
-        margin-bottom: 0px;
-        margin-left: auto;
-      }
-      .content_wrapper .header {
-        display: flex;
-        position: sticky;
-        z-index: 1000;
-        top: 0;
-        width: 100%;
-        max-width: 1245px;
-        background-color: #121212;
-        flex-direction: row;
-        align-items: center; /* vertically center header content */
-        justify-content: flex-start;
-        text-align: left;
-        margin: 0 -16px 16px; /* removed negative top margin which pushed the header off-screen */
-        gap: 16px;
-        padding: 8px 16px;
-      }
-      .content_wrapper .header .sociallinks {
-        display: flex;
-        gap: 12px;
-        height: auto;
-        align-items: center;
-        padding-top: 0; /* remove extra top padding so centering works */
-        margin-left: auto; /* push to the far right of the header */
-      }
-      .game-title {
-        color: #f5e8d8;
-        text-align: left;
-        align-items: left;
-        font-family: "Iceland", sans-serif;
-        font-size: 50px;
-        font-weight: normal;
-        line-height: 1.1;
-      }
-      .game-subtitle {
-        color: #f5e8d8;
-        font-family: "Iceland", sans-serif;
-        font-size: 24px;
-        font-weight: normal;
-        margin-top: 6px;
-      }
-      .game-link {
-        color: #f5e8d8;
-        text-decoration: none;
-        padding: 6px 10px;
-      }
-      .game-link:hover {
-        color: rgba(226, 48, 48, 0.479);
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="../css/db_project.css"
+    />
+
 </head>
 <body>
     <div class="content_wrapper">
@@ -107,6 +40,80 @@
           ></a>
             </div>
         </div>
-    </div>
+        <div class="profile-img text-center">
+          <img src="../Images/Dungeon Brawler/TitlePic.png" class="img-fluid">
+          <div class="desc">
+            <hr />
+            <p><b>Step into a vibrant, chaotic 2D pixel arena where survival is your only goal. 
+              From the moment you begin, you'll face relentless, ever-growing hordes of pixelated enemies that swarm from every direction. 
+            With each passing wave, the tide of foes intensifies, forcing you to adapt your tactics, gather fleeting power-ups, 
+            and push your skills to the limit in a desperate bid to outlast the endless onslaught.</p>
+          </div>
+          
+        </div>
+        <div class="project-info">
+            <h1 style="text-indent: 25px; font-size: 40px;">Project Info</h1>
+            <hr style="color:#f5e8d8"/>
+            <ul>
+              <li>
+                <i class="fas fa-user-alt"></i> Role: Gameplay Programmer
+              </li>
+              <li>
+                <i class="fa fa-users"></i> Team Members:
+                <div class="teamflex">
+                  <a href="https://chpcunningham.github.io/Chpcunningham-website/">Connor Cunningham <br> <i class="far fa-address-card"></i></a>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-tools"></i> Engine: Unreal Engine, C++, Blueprints
+              </li>
+            </ul>
+          </div>
+        <div class="project-details">
+            <div class="project-images">
+              <video width="650px" height="350px" controls>
+                <source src="../Images/Dungeon Brawler/Recording.mp4" type="video/mp4">
+              </video>
+              <img src="../Images/Dungeon Brawler/Pic2.png" class="img-fluid" alt="Additional view">
+            </div>
+            <div class="desc">
+              <h1 style="font-size: 35px;">Programming</h1>
+              <hr>
+              <p> As the lead programmer for this 2D action brawler project, I implemented the core combat, AI, and character systems in Unreal Engine 5 C++, focusing on responsive controls, visual feedback, and a satisfying combat loop.<br><br>
+              <i class="fas fa-gamepad"></i><b> Core Character & Combat Architecture</b><br>
+              <ul class="list">
+                <li>Created a character base class with health management, hurtboxes, and a visual hit feedback system.</li>
+                <li>Implemented knockback and screen-freeze "hit-stop" effects for impactful attacks.</li>
+                <li>Built a modular health component that handles damage, defeat states, and invincibility frames</li>
+              </ul><br>
+              <i class="fas fa-comments"></i><b style="font-size: 20px;"> Hero Controls & Abilities</b><br>
+              <ul class="list">
+                <li>Set up modern input handling for smooth 8-directional movement</li>
+                <li>Programmed melee sword attacks with hitbox detection</li>
+                <li>Created bow mechanics that fire physics-based projectiles</li>
+              </ul>
+            </p>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+          </div>
+          <div class="project-details">
+            <div class="desc">
+              <p> <i class="fas fa-tools"></i><b> Enemy AI</b><br>
+              <ul class="list">
+                <li>Developed simple but effective AI that pursues the player relentlessly</li>
+                <li>Implemented enemy states: chasing, stunned when hit, and defeated with visual effects</li>
+              </ul><br>
+              <i class="fas fa-wrench"></i><b style="font-size: 20px;"> Animation & Visuals</b><br>
+              <ul class="list">
+                <li>Integrated PaperZD for 2D animations with attack and hit reactions</li>
+                <li>Set up a dedicated 2D orthographic camera system</li>
+              </ul>
+            </div>
+            <div class="project-images">
+              <img src="../Images/Dungeon Brawler/Pic4.png">
+            </div>
+            
+          </div>
+        </div>
 </body>
 </html>

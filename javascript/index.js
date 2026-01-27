@@ -16,7 +16,7 @@ email.addEventListener("click", function(){
     window.open("mailto:chpcunningham@gmail.com", "_blank");
 });
 resume.addEventListener("click", function() {
-    window.open("Files/ConnorCunninghamCV.pdf", "_blank");
+    window.open("Files/CV_ConnorCunningham.pdf", "_blank");
 });
 
 // Slider Logic (mobile-enabled slider, desktop shows all)
